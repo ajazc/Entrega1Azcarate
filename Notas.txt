@@ -1,0 +1,21 @@
+#Pasos para el desarrolo de un proyecto
+	Ir a la carpeta y ejecutar
+	python -m django startproject ProyectoFinal
+
+Algunos modelos propuestos
+jugadores
+	nombre
+	numero
+	posicion
+	equipo
+	edad
+equipos
+	Nombre
+	pais
+	nombre_entrenador
+partidos
+	identificador
+	equipo 1
+	equipo 2 
+	fecha_partido
+	
