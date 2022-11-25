@@ -1,7 +1,13 @@
 #Pasos para el desarrolo de un proyecto
 	Ir a la carpeta y ejecutar
 	python -m django startproject ProyectoFinal
-
+	crear app
+        python manage.py startapp AppFutbol
+	crear carpeta template dentro de la app
+	registrar la app en setting dentro del proyecto inicial
+	Corro el siguiente comando para verificar que este todo correcto con la app
+		python .\manage.py check AppFutbol
+	hago un commit
 Algunos modelos propuestos
 jugadores
 	nombre
@@ -18,4 +24,12 @@ partidos
 	equipo 1
 	equipo 2 
 	fecha_partido
+
+#Luego de crear los modelos hay que realizar las migraciones
+python manage.py makemigrations
+python manage.py migrate
+# Dentro del proyecto en urls.py es necesario agregar
+  la ruta general que va atender la aplicacion en este caso AppFutbol
+#Creo las views o controladores que van a contestar a las solicitudes del usuario
+
 	
