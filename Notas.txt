@@ -32,4 +32,14 @@ python manage.py migrate
   la ruta general que va atender la aplicacion en este caso AppFutbol
 #Creo las views o controladores que van a contestar a las solicitudes del usuario
 
+#Mi idea con los templates es tener una base de template que contendra boostraps y desde ahi heredan el resto
+
+#agregado boostraps con rutas static
+
+#El archivo base.html va ser el padre del resto de los html 
+
+#en el archivo forms.py comienzo a crear los formularios
+
+
+
 	

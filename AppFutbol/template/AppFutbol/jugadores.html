@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+
+{% block contenido  %}
+<h1>ESTE ES EL CONTENIDO DE RUTA JUGADORES</h1>
+<form action="{% url 'jugarores' %}" method="POST"> {% csrf_token %}
+
+    <table>
+    
+        {{ form.as_table }}
+    
+    </table>
+    
+    <input type="submit" value="ENVIAR CURSO">
+    
+    
+    </form>
+    
+{{ mensaje }}
+{% endblock %}
