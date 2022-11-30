@@ -4,8 +4,29 @@
 
 
 
-{% block contenido  %}
-<h1>ESTE ES EL CONTENIDO DE ESTADIOS</h1>
+{% block contenido %}
+<div class="row">
+    <h1>ESTE ES EL CONTENIDO DE RUTA PARTIDOS</h1>
+</div>
+{% if formulario %}
+<div class="row">
+    <div class="form-control text-center">
+        <form action="{% url 'partidos' %}" method="POST"> {% csrf_token %}
 
-{{ mensaje }}
+            <table class="table ">
+
+                {{ formulario.as_table }}
+
+            </table>
+
+            <input type="submit" class="btn btn-success" value="GUARDAR PARTIDO">
+
+
+        </form>
+    </div>
+</div>
+{% endif %}
+<div class="row">
+    <p class="alert alert-warning">{{ mensaje }}</p>
+</div>
 {% endblock %}

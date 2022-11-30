@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Heroic Features - Start Bootstrap Template</title>
+    <title>Python Django - App Futbol</title>
     <link rel="stylesheet" href="{% static 'AppFutbol/css/styles.css' %}">
 </head>
 
@@ -35,7 +35,7 @@
                 <div class="m-4 m-lg-5">
                     <h1 class="display-5 fw-bold">Bienvenidos a la App de Futbol en Django</h1>
                     <p class="fs-4"></p>
-                    <a class="btn btn-primary btn-lg" href="#!"> ir a Inicio</a>
+                    <a class="btn btn-primary btn-lg" href="{% url 'inicio' %}"> ir a Inicio</a>
                 </div>
             </div>
         </div>
@@ -53,6 +53,7 @@
                         <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                             
                             <a class="btn btn-primary btn-lg" href="{% url 'jugadores' %}"> Jugadores</a>
+                            <a class="btn btn-success btn-lg" href="{% url 'BuscarJugadores' %}"> Buscar</a>
                             <p class="mb-0">Ver y Agregar Jugadores</p>
                         </div>
                     </div>
@@ -71,6 +72,7 @@
                         <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                             
                             <a class="btn btn-primary btn-lg" href="{% url 'partidos' %}"> Partidos</a>
+                            
                             <p class="mb-0">Ver y Agregar Partidos</p>
                         </div>
                     </div>

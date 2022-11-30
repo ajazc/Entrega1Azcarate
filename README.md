@@ -41,5 +41,16 @@ python manage.py migrate
 #en el archivo forms.py comienzo a crear los formularios
 
 
+RUTAS DEL PROYECTO 
+	host:8000/AppFutbol/ ----> inicio 
+	host:8000/AppFutbol/jugadores ----> formulario para cargar jugador
+	host:8000/AppFutbol/equipos ----> formulario para cargar equipo
+	host:8000/AppFutbol/partidos ----> formulario para cargar partidos
+	host:8000/AppFutbol/Buscar ----> formulario para buscar un jugador
+	host:8000/AppFutbol/BuscarJugadores ----> Presenta los resultados de la busqueda 
 
-	
+FUNCIONALIDADES 
+	DENTRO DEL ARCHIVO VIEWS.PY SE ENCUENTRAN LAS DEFINICIONES DE LAS FUNCIONALIDADES QUE ATIENDEN CADA UNA DE LAS RUTAS
+ADMIN 
+	aazcarate
+	1234

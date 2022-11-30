@@ -3,20 +3,20 @@ from django import forms
 # Aca voy a comenzar a crear los formularios
 
 
-class Jugador(forms.Form):
+class FormularioJugador(forms.Form):
     nombre = forms.CharField(max_length=20)
     numero = forms.IntegerField()
     posicion = forms.CharField(max_length=10)
     equipo = forms.CharField(max_length=20)
     edad = forms.IntegerField()
 
-class Equipo(forms.Form):
+class FormularioEquipo(forms.Form):
     nombre = forms.CharField(max_length=20)
     pais = forms.CharField(max_length=10)
-    nombreEntrenador = forms.CharField(max_length=20)
+    nombre_entrenador = forms.CharField(max_length=20)
 
-class Partidos(forms.Form):
-    ide = forms.IntegerField()
+class FormularioPartidos(forms.Form):
+    id_partido = forms.IntegerField()
     equipo1 = forms.CharField(max_length=20)
     equipo2 = forms.CharField(max_length=20)
-    fechaPartido = forms.DateField()
+    fecha_partido = forms.DateField()

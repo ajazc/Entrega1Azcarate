@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+
+{% block contenido %}
+<div class="row">
+    <h1>ESTE ES EL CONTENIDO DE RUTA BUSCAR JUGADORES</h1>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-sm-3">
+        <div class="form-group">
+            <form action="{% url 'Buscar' %}" method="GET"> {% csrf_token %}
+                <label for="nombre">Nombre del Jugador:</label><br>
+                <input type="text" name="nombre" id="nombre" class="form-control">
+                <small id="nombreHelp" class="form-text text-muted">Ingrese el nombre del jugador a buscar</small><br>
+                <input type="submit" class="btn btn-success" value="BUSCAR JUGADOR">
+            </form>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-sm-3" id="resultados">
+        {% if jugadores %}
+        {% for jugador in jugadores %}
+        <h3>Resultados: </h3>
+        <div class="card" style="width: 18rem;">
+            <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+            <div class="card-body">
+                <h5 class="card-title">
+                    <p>Nombre: {{ jugador.nombre }}</p>
+                </h5>
+                <p class="card-text">Numero: {{ jugador.numero }}</p>
+                <p class="card-text">Posicion: {{ jugador.posicion }}</p>
+                <p class="card-text">Equipo: {{ jugador.equipo }}</p>
+                <p class="card-text">Edad: {{ jugador.edad }}</p>
+
+                <!--<a href="#" class="btn btn-primary"></a>-->
+            </div>
+        </div>
+
+
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+</div>
+<div class="row">
+    <p class="alert alert-warning">{{ mensaje }}</p>
+</div>
+{% endblock %}

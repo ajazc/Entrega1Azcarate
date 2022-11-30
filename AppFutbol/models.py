@@ -18,7 +18,7 @@ class Equipo(models.Model):
     nombreEntrenador = models.CharField(max_length=20)
 
 class Partidos(models.Model):
-    ide = models.IntegerField()
+    identificador = models.IntegerField()
     equipo1 = models.CharField(max_length=20)
     equipo2 = models.CharField(max_length=20)
     fechaPartido = models.DateField()

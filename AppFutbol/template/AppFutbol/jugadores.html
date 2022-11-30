@@ -4,20 +4,29 @@
 
 
 
-{% block contenido  %}
-<h1>ESTE ES EL CONTENIDO DE RUTA JUGADORES</h1>
-<form action="{% url 'jugarores' %}" method="POST"> {% csrf_token %}
+{% block contenido %}
+<div class="row">
+    <h1>ESTE ES EL CONTENIDO DE RUTA JUGADORES</h1>
+</div>
+{% if formulario %}
+<div class="row">
+    <div class="form-control text-center">
+        <form action="{% url 'jugadores' %}" method="POST"> {% csrf_token %}
 
-    <table>
-    
-        {{ form.as_table }}
-    
-    </table>
-    
-    <input type="submit" value="ENVIAR CURSO">
-    
-    
-    </form>
-    
-{{ mensaje }}
+            <table class="table ">
+
+                {{ formulario.as_table }}
+
+            </table>
+
+            <input type="submit" class="btn btn-success" value="GUARDAR JUGADOR">
+
+
+        </form>
+    </div>
+</div>
+{% endif %}
+<div class="row">
+    <p class="alert alert-warning">{{ mensaje }}</p>
+</div>
 {% endblock %}
