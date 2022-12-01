@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+
+{% block contenido %}
+<div class="row">
+    <h1>ESTE ES EL CONTENIDO DE RUTA EQUIPOS</h1>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-sm-3">
+        {% if equipos %}
+        {% for equipo in equipos %}
+        <div class="card m-2" style="width: 18rem;">
+            <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+            <div class="card-body">
+                <h5 class="card-title">
+                    <p>Nombre: {{ equipo.nombre }}</p>
+                </h5>
+                <p class="card-text">Pais: {{ equipo.pais }}</p>
+                <p class="card-text">Entrenador: {{ equipo.nombreEntrenador }}</p>
+                <!--<a href="#" class="btn btn-primary"></a>-->
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+<div class="row">
+    <p class="alert alert-warning">{{ mensaje }}</p>
+</div>
+{% endblock %}

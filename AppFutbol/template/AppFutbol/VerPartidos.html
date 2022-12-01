@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+
+{% block contenido %}
+<div class="row">
+    <h1>ESTE ES EL CONTENIDO DE RUTA PARTIDOS</h1>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-sm-3">
+        {% if partidos %}
+        {% for partido in partidos %}
+        <div class="card m-2" style="width: 18rem;">
+            <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+            <div class="card-body">
+                <h5 class="card-title">
+                    <p>Equipo 1: {{ partido.equipo1 }}</p>
+                    <p>Equipo 2: {{ partido.equipo2 }}</p>
+                </h5>
+                <p class="card-text">Fecha: {{ partido.fechaPartido }}</p>
+                <!--<a href="#" class="btn btn-primary"></a>-->
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+<div class="row">
+    <p class="alert alert-warning">{{ mensaje }}</p>
+</div>
+{% endblock %}

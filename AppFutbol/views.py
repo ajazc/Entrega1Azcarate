@@ -51,9 +51,6 @@ def equipos(request):
             return render(request, "partidos.html", {"mensaje":"Entrenador Guardado Correctamente"})
         else:
             return render(request, "partidos.html", {"mensaje":"Error al guardar el Entrenador"})
-    
-
-
     formulario = FormularioEquipo()   
     return render(request, "equipos.html",  {"formulario":formulario })
 
@@ -62,10 +59,17 @@ def BuscarJugadores(request):
 
 def Buscar(request):
         if request.method =='GET':
-            print(request.GET['nombre'])
             if request.GET['nombre']:
                 NombreJugador = request.GET['nombre']
                 jugador = Jugador.objects.filter(nombre__icontains=NombreJugador)
                 return render(request, "BuscarJugador.html", {"jugadores":jugador})   
             else:
                 return render(request, "BuscarJugador.html",{"mensaje":"Debe ingresar el nombre del jugador"})
+
+def VerEquipos(request):
+        equipos = Equipo.objects.all()
+        return render(request, "VerEquipos.html", {"equipos":equipos})   
+
+def VerPartidos(request):
+        partidos = Partidos.objects.all()
+        return render(request, "VerPartidos.html", {"partidos":partidos})   
